@@ -8,6 +8,12 @@ p{
 	font-family: Arial, sans-serif;
 }
 
+.error{
+	font-size:60pt;
+	font-weight: bold;
+	color: black;
+}
+
 .win{
 	font-size:120pt;
 	font-weight: bold;
