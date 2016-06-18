@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/TechoSports.iml" filepath="$PROJECT_DIR$/TechoSports.iml" />
+      <module fileurl="file://$PROJECT_DIR$/applications/common/common.iml" filepath="$PROJECT_DIR$/applications/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/applications/domain/domain.iml" filepath="$PROJECT_DIR$/applications/domain/domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/applications/repository/repository.iml" filepath="$PROJECT_DIR$/applications/repository/repository.iml" />
+      <module fileurl="file://$PROJECT_DIR$/applications/rest/rest.iml" filepath="$PROJECT_DIR$/applications/rest/rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/applications/service/service.iml" filepath="$PROJECT_DIR$/applications/service/service.iml" />
+    </modules>
+  </component>
+</project>

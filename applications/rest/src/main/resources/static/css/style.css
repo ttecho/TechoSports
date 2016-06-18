@@ -1,0 +1,31 @@
+
+.main{
+	text-align:center;
+	margin-top:15%;
+}
+
+p{
+	font-family: Arial, sans-serif;
+}
+
+.win{
+	font-size:120pt;
+	font-weight: bold;
+	color: green;
+}
+
+.loss{
+	font-size:120pt;
+	font-weight: bold;
+	color: red;
+}
+
+.ongoing{
+	font-size:120pt;
+	font-weight: bold;
+	color: yellow;
+}
+
+.scoreLinkDiv{
+	bottom: 0px;
+}
