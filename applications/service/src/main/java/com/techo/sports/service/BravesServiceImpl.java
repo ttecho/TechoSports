@@ -21,7 +21,7 @@ public class BravesServiceImpl implements BravesService {
     private String bravesResultJSON = "";
 
     @Scheduled(cron = "*/30 * * * * *")
-    private void scrapeESPN() throws Exception {
+    private void scrapeBravesESPN() throws Exception {
         System.out.println("**************************************");
         System.out.println("SCHEDULED SCRAPE HAS BEGUN AT " + new Date());
         System.out.println("**************************************");
