@@ -25,6 +25,7 @@
         <module name="common" />
         <module name="domain" />
         <module name="repository" />
+        <module name="rest" />
         <module name="service" />
       </profile>
     </annotationProcessing>
