@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
-
 /**
  * Created by TXT0627 on 6/17/2016.
  */
@@ -27,9 +25,7 @@ public class BravesController {
     public ResponseEntity<String> getSkuDetails() {
         try {
             return new ResponseEntity<>(bravesServiceImpl.didTheBravesWin(), HttpStatus.OK);
-        } catch (IOException e) {
-            return new ResponseEntity<String>("Unexpected IO Failure!!!", null, HttpStatus.INTERNAL_SERVER_ERROR);
-        }  catch (Exception e) {
+        } catch (Exception e) {
             return new ResponseEntity<String>(e.getMessage(), null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
 

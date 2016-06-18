@@ -8,21 +8,23 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
-import java.net.URLConnection;
+import java.util.Date;
 
 /**
  * Created by TXT0627 on 6/17/2016.
  */
 @Service
 public class BravesServiceImpl implements BravesService {
-    private URLConnection conn;
-    private Gson gson = new Gson();
+    private String bravesResultJSON = "";
 
-    @Override
-    public String didTheBravesWin() throws IOException, Exception {
+    @Scheduled(cron = "*/30 * * * * *")
+    private void scrapeESPN() throws Exception {
+        System.out.println("**************************************");
+        System.out.println("SCHEDULED SCRAPE HAS BEGUN AT " + new Date());
+        System.out.println("**************************************");
         BravesResult bravesResult = new BravesResult();
         Document doc = Jsoup.connect(Constants.BRAVES_SCHEDULE).get();
         Elements scores = doc.getElementsByClass("score");
@@ -55,8 +57,17 @@ public class BravesServiceImpl implements BravesService {
         } else {
             throw new Exception("No games recorded");
         }
+        Gson gson = new Gson();
+        bravesResultJSON = gson.toJson(bravesResult);
 
+        System.out.println("**************************************");
+        System.out.println("SCHEDULED SCRAPE HAS FINISHED AT " + new Date());
+        System.out.println("RESULTING JSON: " + bravesResultJSON);
+        System.out.println("**************************************");
+    }
 
-        return gson.toJson(bravesResult);
+    @Override
+    public String didTheBravesWin(){
+        return bravesResultJSON;
     }
 }
