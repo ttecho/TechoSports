@@ -50,7 +50,7 @@ public class GenericScraperServiceImpl implements GenericScraperService {
                 genericResult.setCssClass("ongoing");
             }
         } else {
-            genericResult.setError("Season has not started.");
+            genericResult.setError("Upcoming...");
             genericResult.setCssClass("error");
             genericResult.setLink(url);
             return gson.toJson(genericResult);
